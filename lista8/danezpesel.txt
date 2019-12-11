@@ -1,0 +1,30 @@
+nr 58021382573:
+ data urodzenia: 13-02-1958;	 płeć: mężczyzna
+
+nr 68031159171:
+ data urodzenia: 11-03-1968;	 płeć: mężczyzna
+
+nr 02320609150:
+ data urodzenia: 06-12-2002;	 płeć: mężczyzna
+
+nr 35111418868:
+ data urodzenia: 14-11-1935;	 płeć: kobieta
+
+nr 75122165940:
+ data urodzenia: 21-12-1975;	 płeć: kobieta
+
+nr 44010102349:
+ data urodzenia: 01-01-1944;	 płeć: kobieta
+
+nr 73030420094:
+ data urodzenia: 04-03-1973;	 płeć: mężczyzna
+
+nr 63091666764:
+ data urodzenia: 16-09-1963;	 płeć: kobieta
+
+nr 18072039459:
+ data urodzenia: 20-07-1918;	 płeć: mężczyzna
+
+nr 90021981802:
+ data urodzenia: 19-02-1990;	 płeć: kobieta
+
