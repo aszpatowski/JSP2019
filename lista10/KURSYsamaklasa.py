@@ -1,7 +1,6 @@
 #!/usr/bin/python3.6
 #-*- coding: utf-8 -*-
 import xml.etree.ElementTree as ET
-from os import system
 class Kursy:
     def __init__(self,source):
         mytree = ET.parse(source)
@@ -42,31 +41,12 @@ class Kursy:
         try:
             index1 = self.Code.index(KodWaluta1)
             index2 = self.Code.index(KodWaluta2)
-            KwotaWaluta = (kwota*float((self.Course[index1]).replace(',','.'))/float((self.Course[index2]).replace(',','.')))*int(self.Converter[index2])/int(self.Converter[index1])
+            KwotaWaluta = (kwota*float((self.Course[index1]).replace(',','.'))/float((self.Course[index2]).replace(',','.')))*(int(self.Converter[index2])/int(self.Converter[index1]))
             print("{} {} to {} {}".format(kwota,KodWaluta1,KwotaWaluta,KodWaluta2))
             return KwotaWaluta
         except:
             print("Kody walut są niepoprawne.")
-def program_do_przeliczania_walut():
-    kursy = Kursy('kursy/a004z200108.xml')
-    while(True):
-        try:
-            print("Co chcesz zrobić?","1. Wyświetlić listę dostępnych kursów","2. Konwersja PLN na wybraną walutę","3. Konwersja wybranej waluty na inna walutę","4. Wyjście",sep="\n")
-            wybor=int(input(": "))
-            system("clear")
-            if(wybor==1):
-                kursy.ListaKursow()
-            if(wybor==2):
-                print("\n")
-                kursy.PLNtoDiffrent(float(input("Podaj kwotę: ")),input("Podaj kod waluty: "))
-                print("\n")
-            if(wybor==3):
-                print("\n")
-                kursy.DiffrentToDiffrent(float(input("Podaj kwotę: ")), input("Podaj kod waluty w której jest kwota: "), input("Podaj kod waluty docelowej: "))
-                print("\n")
-            if(wybor==4):
-                break
-        except:
-            system("clear")
-            print("Podane wartości nie były liczbami lub kody walut były niepoprawne.")
-program_do_przeliczania_walut()
+kursy = Kursy('kursy/a004z200108.xml')
+kursy.ListaKursow()
+kursy.PLNtoDiffrent(110,"eur")
+kursy.DiffrentToDiffrent(125.10,'huf','czk')
