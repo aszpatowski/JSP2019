@@ -20,4 +20,5 @@ if __name__ == "__main__":
         zadanie2(lines)
     else:
         zadanie2((list(map(int, sys.argv[1].split(',')))))
+        print(sys.argv)
 
