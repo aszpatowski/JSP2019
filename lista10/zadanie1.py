@@ -10,20 +10,24 @@ print(circle.pole)
 print(circle.obwod)
 class Unpacked:
     def __init__(self, lista):
+        self.sublists = self.sublista(lista)
+
+    def sublista(self,lista):
         sublist = [[]]
         for i in range(len(lista) + 1):
             for j in range(i + 1, len(lista) + 1):
                 sub = lista[i:j]
                 sublist.append(sub)
-        self.sublists = sublist
+        return sublist
+
 lista = [1,2,3]
 lista1 = [1,2,3,"hej","co tam"]
 listadopodlisty = Unpacked(lista)
 listadopodlisty2 = Unpacked(lista1)
 
 
-#print(listadopodlisty.sublists)
-#print(listadopodlisty2.sublists)
+print(listadopodlisty.sublists)
+print(listadopodlisty2.sublists)
 
 class Unpacked3sum0:
     def __init__(self, lista):
@@ -39,6 +43,6 @@ class Unpacked3sum0:
             if sum(sublist[i]) != 0:
                 sublist.pop(i)
         self.sublists = sublist
-listasuper = [1,2,-3,-1,3,-2,1,-1,-2.5,2,0.5]
+listasuper = [1,2,-3,-1,3,-2,1,-1,-2.5,2,0.5,1.2,2.4,-3.6]
 listadopodlistysuper  = Unpacked3sum0(listasuper)
 print(listadopodlistysuper.sublists)

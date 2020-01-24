@@ -1,0 +1,20 @@
+Help on module fib2:
+
+NNAAMMEE
+    fib2
+
+DDEESSCCRRIIPPTTIIOONN
+    This module 'fib2' is auto-generated with f2py (version:2).
+    Functions:
+      a = fib(n)
+    .
+
+DDAATTAA
+    ffiibb = <fortran object>
+
+VVEERRSSIIOONN
+    b'$Revision: $'
+
+FFIILLEE
+    /home/aleksander/Pulpit/python/repos/JSP2019/pythonforscientist/fib2.cpython-37m-x86_64-linux-gnu.so
+
