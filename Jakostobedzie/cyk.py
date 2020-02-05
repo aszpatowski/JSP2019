@@ -54,7 +54,7 @@ din = int(2*s+1)
 xnay = int((din)**int(int(N/2)))
 tamto = int(((din**((N/2)-1))*2*s)-1)
 count = 0
-ile = 10
+ile = 100
 def min_energy(ham1,ham2):
     ham3 = np.kron(ham1, np.identity(int((din) ** potega))) + np.kron(np.identity(int((din) ** potega)), ham2) + np.dot(spin.SpinX(nmini,N),spin.SpinX(nmini+1,N)) + np.dot(spin.SpinX(nmini+1,N),spin.SpinX(nmini+2,N)) + np.dot(spin.SpinX(nmini+2,N), spin.SpinX(nmini+3,N)) - h*(spin.SpinZ(nmini+1,N) + spin.SpinX(nmini+2,N)) + np.dot(spin.SpinY(nmini,N),spin.SpinY(nmini+1,N)) + np.dot(spin.SpinY(nmini+1,N),spin.SpinY(nmini+2,N)) + np.dot(spin.SpinY(nmini+2,N), spin.SpinY(nmini+3,N)) + np.dot(spin.SpinZ(nmini,N), spin.SpinZ(nmini+1,N)) + np.dot(spin.SpinZ(nmini+1,N), spin.SpinZ(nmini+2,N)) + np.dot(spin.SpinZ(nmini+2,N),spin.SpinZ(nmini+3,N))
     w,v = np.linalg.eig(ham3)
@@ -108,6 +108,7 @@ for i in range(ile):
     plik.write(str(i+1)+". "+str(temp[1]/(N+(2*i)))+"\n")
     plik.flush()
 plik.write("BRRRRUSH...\n\n")
+dane = open("daneS{}N{}J{}H{}.txt".format(s,N,J,h),"w")
 #Zaczynamy zamiatanie
 while count<1000:
     count+=1
@@ -170,6 +171,8 @@ while count<1000:
         plik.flush()
     plik.write("MAIN "+str(count)+". "+str(temp[1]/(N+(2*(ile-1))))+"\n")
     plik.flush()
+    dane.write(str(temp[1]/(N+(2*(ile-1))))+"\n")
+    dane.flush()
     listY = listY[0:ile]
 plik.close()
 
